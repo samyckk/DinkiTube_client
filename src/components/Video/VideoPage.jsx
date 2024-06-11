@@ -51,7 +51,7 @@ const VideoPage = ()=>{
             })
         }
         getChannel();
-    },[channel._id,videoId,videoDetails.userId]);
+    },[channel._id,videoId,videoDetails]);
 
 
     const handleLike = async()=>{
@@ -117,7 +117,7 @@ const VideoPage = ()=>{
                 setChannel(res.data);
             });
         }
-    }, [videoDetails.userId,videoDetails.likes,videoDetails.likes, userDetails]);
+    }, [videoDetails, userDetails]);
 
     return(
         <div id="main" className="flex flex-row justify-between w-full mt-14 ">
