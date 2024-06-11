@@ -33,7 +33,7 @@ const Navbar = ()=>{
                 </div>
                 <Link to="/">
                     <div id="youtube_icon" className="flex items-center">
-                        <img style={{height: "56px"}} src="https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png" alt="yt_icon" srcSet="" />
+                        <img style={{height: "56px"}} src={`${process.env.PUBLIC_URL}/Dlogo.png`} alt="yt_icon" srcSet="" />
                         <p className="text-white m-auto font-semibold text-2xl">DinkiTube</p>
                     </div>
                 </Link>
