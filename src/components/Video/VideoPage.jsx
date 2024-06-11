@@ -28,7 +28,7 @@ const VideoPage = ()=>{
     useEffect( ()=>{
         const fetchdata = async()=>{
 
-            await axios.put(`http://localhost:8000/api/videos/addView/${videoId}`).then( (res)=>{
+            await axios.put(`https://dinki-tube-server.vercel.app/api/videos/addView/${videoId}`).then( (res)=>{
                 console.log(".");
                 console.log("added view");
             });
