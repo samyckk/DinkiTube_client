@@ -34,7 +34,7 @@ const VideoPage = ()=>{
             });
 
             //Get video details
-            await axios.get(`http://localhost:8000/api/videos/fetch/${videoId}`).then((res)=>{
+            await axios.get(`https://dinki-tube-server.vercel.app/api/videos/fetch/${videoId}`).then((res)=>{
             dispatch(fetchVideo(res.data));       
         })
                        
@@ -46,7 +46,7 @@ const VideoPage = ()=>{
 
     useEffect(()=>{
         const getChannel = async()=>{
-            await axios.get(`http://localhost:8000/api/users/find/${videoDetails.userId}`).then((res)=>{
+            await axios.get(`https://dinki-tube-server.vercel.app/api/users/find/${videoDetails.userId}`).then((res)=>{
                 setChannel(res.data);
             })
         }
@@ -60,7 +60,7 @@ const VideoPage = ()=>{
             return ;
         }
         if( !userDetails.likedVids?.includes(videoDetails._id)){
-            await axios.put(`http://localhost:8000/api/videos/like/${videoDetails._id}`).then( (res)=>{
+            await axios.put(`https://dinki-tube-server.vercel.app/api/videos/like/${videoDetails._id}`).then( (res)=>{
             console.log("Video Liked successfully");
             dispatch(likeRedux(videoDetails._id));
             })
@@ -74,7 +74,7 @@ const VideoPage = ()=>{
             return ;
         }
         if(! userDetails.dislikedVids?.includes(videoDetails._id)){
-            await axios.put(`http://localhost:8000/api/videos/dislike/${videoDetails._id}`).then( (res)=>{
+            await axios.put(`https://dinki-tube-server.vercel.app/api/videos/dislike/${videoDetails._id}`).then( (res)=>{
             console.log("Video disLiked successfully");
             dispatch(dislikeRedux(videoDetails._id));
             })
@@ -90,7 +90,7 @@ const VideoPage = ()=>{
         }
         console.log(".");
         if(channel._id === userDetails._id){
-            await axios.delete(`http://localhost:8000/api/videos/${videoDetails._id}`).then( (res)=>{
+            await axios.delete(`https://dinki-tube-server.vercel.app/api/videos/${videoDetails._id}`).then( (res)=>{
                 console.log("Deleted Successfully!");
                 navigate("/");
             })
@@ -106,14 +106,14 @@ const VideoPage = ()=>{
             return ;
         }
         userDetails.subscribedUsers.includes(channel._id)
-      ? await axios.put(`http://localhost:8000/api/users/unsub/${channel._id}`)
-      : await axios.put(`http://localhost:8000/api/users/sub/${channel._id}`);
+      ? await axios.put(`https://dinki-tube-server.vercel.app/api/users/unsub/${channel._id}`)
+      : await axios.put(`https://dinki-tube-server.vercel.app/api/users/sub/${channel._id}`);
     dispatch(subscription(channel._id));
     }
 
     useEffect(() => {
         if (videoDetails.userId) {
-            axios.get(`http://localhost:8000/api/users/find/${videoDetails.userId}`).then((res) => {
+            axios.get(`https://dinki-tube-server.vercel.app/api/users/find/${videoDetails.userId}`).then((res) => {
                 setChannel(res.data);
             });
         }
