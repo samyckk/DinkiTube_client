@@ -22,7 +22,7 @@ const Uploader = ({ setUploader }) => {
     useEffect(()=>{
 
         const send = async()=>{
-           await axios.post(`http://localhost:8000/api/videos/addVid`, {title, desc, tags,videoUrl, imgUrl}).then( (res)=>{
+           await axios.post(`https://dinki-tube-server.vercel.app/api/videos/addVid`, {title, desc, tags,videoUrl, imgUrl}).then( (res)=>{
                 console.log(res.data);
                 navigate(`/video/${res.data._id}`)
            });
