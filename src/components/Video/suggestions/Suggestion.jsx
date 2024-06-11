@@ -7,7 +7,7 @@ const Suggestion = ({tags})=>{
     const [allVids, setAllVids] = useState([]);
     useEffect(()=>{
         const getVideos = async()=>{
-            await axios.get(`http://localhost:8000/api/videos/tags?tags=${tags}`).then((res)=>{
+            await axios.get(`https://dinki-tube-server.vercel.app/api/videos/tags?tags=${tags}`).then((res)=>{
                 setAllVids(res.data);
             }
             );
