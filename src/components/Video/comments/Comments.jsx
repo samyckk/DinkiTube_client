@@ -33,7 +33,7 @@ const Comments = ({videoId})=>{
             return ;
         }
         if (newcmnt.trim().length === 0) return;
-        await axios.post(`http://localhost:8000/api/comments/addComment/${videoId}`, {newcmnt}).then( (res)=>{
+        await axios.post(`https://dinki-tube-server.vercel.app/api/comments/addComment/${videoId}`, {newcmnt}).then( (res)=>{
             setnewcmnt("");
             setTrig(!trig);        
         })
