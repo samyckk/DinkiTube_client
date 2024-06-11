@@ -12,7 +12,7 @@ const Search = () => {
     useEffect(() => {
         const getVids = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/api/videos/search${query}`);
+                const res = await axios.get(`https://dinki-tube-server.vercel.app/api/videos/search${query}`);
                 setAllVids(res.data);
                 console.log(res.data);
             } catch (error) {
