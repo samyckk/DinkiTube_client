@@ -8,7 +8,7 @@ const SuggestCard = ({ vid }) => {
 
   useEffect(() => {
     const fetchChannel = async () => {
-      const res = await axios.get(`http://localhost:8000/api/users/find/${vid.userId}`);
+      const res = await axios.get(`https://dinki-tube-server.vercel.app/api/users/find/${vid.userId}`);
       setUser(res.data);
     };
     fetchChannel();
