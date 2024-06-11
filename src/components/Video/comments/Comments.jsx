@@ -15,7 +15,7 @@ const Comments = ({videoId})=>{
 
     useEffect(()=>{
         const fetchComments = async()=>{
-            await axios.get(`http://localhost:8000/api/comments/${videoId}`).then( (res)=>{
+            await axios.get(`https://dinki-tube-server.vercel.app/api/comments/${videoId}`).then( (res)=>{
                 setComments(res.data);
             })
         }
